@@ -10,6 +10,7 @@ export default class App extends Component {
   state ={
     filteredPokemon: [],
     searchKeyword: '',
+    categories: []
   }
 
   handleSubmit = async () => {
@@ -30,9 +31,13 @@ export default class App extends Component {
     return (
       <main>
         <Header />
-        <Search handleSearch={this.handleSearch} />
-        <button onClick={this.handleSubmit}>Find Pokemon</button>
-        <PokemonList />
+        <div id="row">
+          <div id="left">
+            <Search handleSearch={this.handleSearch} />
+            <button onClick={this.handleSubmit}>Find Pokemon</button>
+          </div>
+            <PokemonList displayPoke={this.state.filteredPokemon}/>
+        </div>
       </main>
     )
   }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import logo from './logo.svg';
+import Header from './Header.js'
+import Search from './Search.js'
+import PokemonList from './PokemonList.js'
 import './App.css';
 
 
@@ -8,9 +10,11 @@ export default class App extends Component {
   
   render() {
     return (
-      <div>
-        
-      </div>
+      <main>
+        <Header />
+        <Search />
+        <PokemonList />
+      </main>
     )
   }
 }

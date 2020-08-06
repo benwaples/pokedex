@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import request from 'superagent';
-import Header from '../Header.js'
 import Search from './Search.js'
 import Option from './Option.js'
 import PokemonList from './PokemonList.js'
@@ -36,7 +35,6 @@ export default class SearchPage extends Component {
   render() {
     return (
       <main>
-        <Header />
         <div id="row">
           <div id="left">
             <Search handleSearch={this.handleSearch} />

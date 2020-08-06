@@ -6,12 +6,15 @@ import {
 } from 'react-router-dom';
 import SearchPage from './SearchPage/SearchPage.js';
 import DetailPage from './DetailPage/DetailPage.js';
+import Header from './Header.js';
+import './App.css';
 
 export default class App extends Component {
     render() {
         return (
             <div>
                 <Router>
+                  <Header />
                     <Switch>
                         <Route 
                             path="/" 

@@ -3,8 +3,7 @@ import request from 'superagent';
 import Search from './Search.js'
 import Option from './Option.js'
 import PokemonList from './PokemonList.js'
-import styles from '../App.css'
-import '../App.css';
+import '../App.css'; 
 
 
 export default class SearchPage extends Component {
@@ -43,7 +42,7 @@ export default class SearchPage extends Component {
             </select> 
             <button onClick={this.handleSubmit}>Find Pokemon</button>
           </div>
-            {this.state.isLoading ? <img className={styles.spin} src="pokeball.png" alt="pokeball"/> :
+            {this.state.isLoading ? <img className={"spin"} src="pokeball.png" alt="pokeball"/> :
             <PokemonList displayPoke={this.state.filteredPokemon}/>
             }
         </div>

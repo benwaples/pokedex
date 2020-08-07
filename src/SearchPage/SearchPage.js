@@ -81,7 +81,7 @@ export default class SearchPage extends Component {
       <main>
         <div id="row">
           <div id="left">
-            <Search handleSearch={this.handleSearch} />
+            <Search searchKeyword={this.state.searchKeyword} handleSearch={this.handleSearch} />
             <select value={this.state.searchFilter} onChange={(e) => {this.setState({searchFilter: e.target.value})}}>
                 <Option />
             </select> 

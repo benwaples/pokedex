@@ -6,7 +6,7 @@ export default class Search extends Component {
             <>
                 <div id="search">
                     <h1>Which Pokemon Would you like to search?</h1>
-                    <input type="text" onChange={this.props.handleSearch} />
+                    <input value={this.props.searchKeyword} type="text" onChange={this.props.handleSearch} />
                 </div>
                 
             </>

@@ -10,15 +10,18 @@ export default class PageManager extends Component {
         } = this.props;
 
         return (
-            <div>
-                {
-                Number(currentPage) !== 1 && <button onClick={handlePreviousPage}>Previous Page</button> 
-                }
-                {
-                Number(currentPage) !== Number(totalPages) && <button onClick={handleNextPage}>Next Page</button>
-                }
-                <h2 className="displayPage">Page {currentPage} of {totalPages}</h2>
-            </div>
+            <>
+                <div className="pageNavBox">
+                    {
+                    Number(currentPage) === 1 ? <button onClick={handlePreviousPage} className="pageNav disable">Previous Page</button> : <button onClick={handlePreviousPage} className="pageNav">Previous Page</button> 
+                    }
+                    {
+                    Number(currentPage) !== Number(totalPages) ? <button onClick={handleNextPage} className="pageNav">Next Page</button> :
+                    <button onClick={handleNextPage} className="pageNav disable">Next Page</button>
+                    }
+                </div>
+                    <h2 className="displayPage">Page {currentPage} of {totalPages}</h2>
+            </>
         )
     }
 }

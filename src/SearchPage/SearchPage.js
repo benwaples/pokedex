@@ -84,7 +84,7 @@ export default class SearchPage extends Component {
             <select value={this.state.searchFilter} onChange={(e) => {this.setState({searchFilter: e.target.value})}}>
                 <Option />
             </select> 
-            <button onClick={this.handleSubmit}>Find Pokemon</button>
+            <button className="search" onClick={this.handleSubmit}>Find Pokemon</button>
             <PageManager 
             handleNextPage={this.handleNextPage} 
             handlePreviousPage={this.handlePreviousPage} 

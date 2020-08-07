@@ -14,7 +14,6 @@ export default class SearchPage extends Component {
     isLoading: false,
     currentPage: 1,
     totalPages: 1,
-    searchKeyword: ''
   }
 
   componentDidUpdate = async (prevProps, prevState) => {

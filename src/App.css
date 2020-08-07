@@ -19,7 +19,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -33,6 +33,9 @@
   color: #61dafb;
 }
 
+#headerimg {
+  width: 400px;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -115,7 +118,7 @@ header {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  width: 600px;
+  width: 1200px;
   list-style: none;
 }
 
@@ -151,4 +154,38 @@ li {
 
 h1 {
   text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.detailedView {
+  margin: 15px;
+  border: solid 2px #252323ff;
+  background-color: #dad2bcff;
+  border-radius: 20px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  cursor: pointer;
+}
+
+select {
+  margin-bottom: 15px;
+  width: 100px;
+  height: 30px
+}
+
+#centerIt {
+  margin: auto;
+  display: block;
 }

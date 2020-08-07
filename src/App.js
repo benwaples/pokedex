@@ -1,50 +1,34 @@
 import React, { Component } from 'react'
-import request from 'superagent';
-import Header from './Header.js'
-import Search from './Search.js'
-import PokemonList from './PokemonList.js'
-import styles from './App.css'
+import {
+    BrowserRouter as Router, 
+    Route, 
+    Switch,
+} from 'react-router-dom';
+import SearchPage from './SearchPage/SearchPage.js';
+import DetailPage from './DetailPage/DetailPage.js';
+import Header from './Header.js';
 import './App.css';
 
-
-
 export default class App extends Component {
-  state ={
-    filteredPokemon: [],
-    searchKeyword: '',
-    isLoading: false,
+    render() {
+        return (
+            <div>
+                <Router>
+                  <Header />
+                    <Switch>
+                        <Route 
+                            path="/" 
+                            exact
+                            render={(routerProps) => <SearchPage {...routerProps} />} 
+                        />
+                        <Route
+                          path="/detailPage/:myPokemonName" 
+                          exact
+                          render={(routerProps) => <DetailPage {...routerProps} />} 
+                         />
+                    </Switch>
+                </Router>
+            </div>
+        )
+    }
   }
-
-  handleSubmit = async () => {
-    this.setState({isLoading: true})
-    const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?perPage=400&pokemon=${this.state.searchKeyword}`)
-
-    this.setState({
-      filteredPokemon: data.body.results,
-      isLoading: false
-    })
-
-    console.log(this.state.filteredPokemon)
-  }
-
-  handleSearch = (e) => {
-    this.setState({searchKeyword: e.target.value})
-  }
-  
-  render() {
-    return (
-      <main>
-        <Header />
-        <div id="row">
-          <div id="left">
-            <Search handleSearch={this.handleSearch} />
-            <button onClick={this.handleSubmit}>Find Pokemon</button>
-          </div>
-            {this.state.isLoading ? <img className={styles.spin} src="pokeball.png" alt="pokeball"/> :
-            <PokemonList displayPoke={this.state.filteredPokemon}/>
-            }
-        </div>
-      </main>
-    )
-  }
-}

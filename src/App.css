@@ -95,7 +95,7 @@ header {
 #left {
   height: 100%;
   width: 300px;
-  height: 300px;
+  height: fit-content;
   background-color: #a99985ff;
   display: flex;
   margin-top: 50px;
@@ -122,8 +122,16 @@ header {
   list-style: none;
 }
 
-img {
+.pokeImg {
   width: 200px;
+  filter: saturate(130%) contrast(110%) drop-shadow(12px 10px 8px);
+  transition: transform 1s;
+}
+
+.pokeImg:hover {
+  transform: scale(1.25);
+  color: black;
+  filter: saturate(120%) contrast(120%) drop-shadow(12px 10px 8px);
 }
 
 input {
@@ -132,7 +140,7 @@ input {
   font-size: 18px;
 }
 
-button {
+.search {
  background-color: #252323ff;
  color: white;
  height: 30px;
@@ -188,4 +196,27 @@ select {
 #centerIt {
   margin: auto;
   display: block;
+}
+
+.pageNav {
+  background-color: #70798cff;
+  border-radius: 10px;
+  color: white
+}
+
+.pageNavBox {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.disable {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: .7;
+}
+
+button {
+  cursor: pointer;
 }
